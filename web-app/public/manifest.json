@@ -1,0 +1,11 @@
+{
+  "short_name": "Commit by Default",
+  "name": "Commit by Default by Yuchen Wang",
+  "icons": [
+
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
