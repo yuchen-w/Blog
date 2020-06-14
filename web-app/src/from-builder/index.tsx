@@ -20,11 +20,6 @@ const defaultIsMobile = screen.width <= 768;
 export const Home = () => {
 	const [isMobile, setIsMobile] = useState(defaultIsMobile);
 
-	// // eslint-disable-next-line no-restricted-globals
-	// if (screen.width <= 768) {
-	// 	setIsMobile(true);
-	// }
-
 	window.addEventListener("resize", () => {
 		// eslint-disable-next-line no-restricted-globals
 		if (screen.width <= 768 && !isMobile) {
@@ -37,7 +32,7 @@ export const Home = () => {
 	});
 
 	return (
-		<Layout className="templates-wrapper">
+		<Layout style={{height: "100vh"}}>
 			<Nav0
 				id="Nav0_0"
 				key="Nav0_0"
@@ -52,7 +47,7 @@ export const Home = () => {
 						defaultOpenKeys={["sub1"]}
 						style={{ height: "100%", borderRight: 0 }}
 					>
-						<SubMenu
+						{/* <SubMenu
 							key="sub1"
 							icon={<UserOutlined />}
 							title="subnav 1"
@@ -81,14 +76,13 @@ export const Home = () => {
 							<Menu.Item key="10">option10</Menu.Item>
 							<Menu.Item key="11">option11</Menu.Item>
 							<Menu.Item key="12">option12</Menu.Item>
-						</SubMenu>
+						</SubMenu> */}
 					</Menu>
 				</Sider>
 				<Layout style={{ padding: "0 24px 24px" }}>
 					<Breadcrumb style={{ margin: "16px 0" }}>
-						<Breadcrumb.Item>Home</Breadcrumb.Item>
-						<Breadcrumb.Item>List</Breadcrumb.Item>
-						<Breadcrumb.Item>App</Breadcrumb.Item>
+						<Breadcrumb.Item>Blog</Breadcrumb.Item>
+						<Breadcrumb.Item>Landing Page</Breadcrumb.Item>						
 					</Breadcrumb>
 					<Content
 						className="site-layout-background"
@@ -98,7 +92,7 @@ export const Home = () => {
 							minHeight: 280,
 						}}
 					>
-						Content
+						Some (hopefully) exciting posts will be coming soon. Stay tuned!
 					</Content>
 				</Layout>
 			</Layout>

@@ -15,8 +15,7 @@ export const Nav00DataSource = {
         children: {
           href: '#',
           children: [{ children: 'Home', name: 'text' }],
-        },
-        
+        },        
       },
       {
         name: 'item1',
@@ -24,59 +23,7 @@ export const Nav00DataSource = {
         children: {
           href: '#',
           children: [{ children: 'Blog (Coming soon)', name: 'text' }],
-        },
-        subItem: [
-          {
-            name: 'sub0',
-            className: 'item-sub',
-            children: {
-              className: 'item-sub-item',
-              children: [
-                {
-                  name: 'image0',
-                  className: 'item-image',
-                  children:
-                    'https://gw.alipayobjects.com/zos/rmsportal/ruHbkzzMKShUpDYMEmHM.svg',
-                },
-                {
-                  name: 'title',
-                  className: 'item-title',
-                  children: 'Recipes',
-                },
-                {
-                  name: 'content',
-                  className: 'item-content',
-                  children: 'View the latest recipes that I\'ve tried',
-                },
-              ],
-            },
-          },
-          {
-            name: 'sub1',
-            className: 'item-sub',
-            children: {
-              className: 'item-sub-item',
-              children: [
-                {
-                  name: 'image0',
-                  className: 'item-image',
-                  children:
-                    'https://gw.alipayobjects.com/zos/rmsportal/ruHbkzzMKShUpDYMEmHM.svg',
-                },
-                {
-                  name: 'title',
-                  className: 'item-title',
-                  children: 'Travel',
-                },
-                {
-                  name: 'content',
-                  className: 'item-content',
-                  children: 'View my latest travels!',
-                },
-              ],
-            },
-          },
-        ],
+        },        
       },      
     ],
   },
