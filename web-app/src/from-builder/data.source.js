@@ -13,7 +13,7 @@ export const Nav00DataSource = {
         name: 'item0',
         className: 'header0-item',
         children: {
-          href: '#',
+          href: '/',
           children: [{ children: 'Home', name: 'text' }],
         },        
       },

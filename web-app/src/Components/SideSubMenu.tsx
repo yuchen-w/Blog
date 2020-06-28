@@ -7,6 +7,7 @@ import {
 } from "@ant-design/icons";
 import { GitHubContent } from "../Models/GitHubContent";
 import { getContents } from "../Utilities/api";
+import { Link } from "react-router-dom";
 const { SubMenu } = Menu;
 
 type SideSubMenuType = {
@@ -25,11 +26,11 @@ export const SideSubMenu = (props: SideSubMenuType) => {
 			url,
 			setContents
 		);
-    }, []);
-
+    }, [url]);
+	
 	return (
 		<SubMenu key={key} icon={icon} title={title} {...rest}>
-            {contents.map(item => <Menu.Item key={item.url}>{item.name.replace(".md", "")}</Menu.Item>)}
+            {contents.map(item => <Menu.Item key={item.url}><Link to={`/#/${item.download_url}`}>{item.name.replace(".md", "")}</Link></Menu.Item>)}
 		</SubMenu>
 	);
 };

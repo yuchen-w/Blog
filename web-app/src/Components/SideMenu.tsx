@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Menu } from "antd";
 import {
-	UserOutlined,
-	LaptopOutlined,
-	NotificationOutlined,
+	FolderOutlined,
 } from "@ant-design/icons";
 import { toPascalCase } from "../Utilities/stringUtils";
 import { getContents } from "../Utilities/api";
 import { SideSubMenu } from "./SideSubMenu";
 import { GitHubContent } from "../Models/GitHubContent";
-const { SubMenu } = Menu;
+import { Link } from "react-router-dom";
+
 
 export const SideMenu = () => {
     const [blogRootItems, setBlogRootItems] = useState<GitHubContent[]>([]);
@@ -31,12 +30,14 @@ export const SideMenu = () => {
 			{blogRootItems.map((item) =>
 				item.name.toLowerCase().endsWith(".md") ? (
 					<Menu.Item key={item.url}>
+						<Link to={`/#/${item.download_url}`}>
 						{toPascalCase(item.name.replace(".md", ""))}
+						</Link>
 					</Menu.Item>
 				) : (
 					<SideSubMenu
 						key={item.url}
-						icon={<UserOutlined />}
+						icon={<FolderOutlined />}
                         title={item.name}
                         url={item.url}
 					></SideSubMenu>
