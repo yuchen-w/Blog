@@ -8,8 +8,7 @@ type BlogContentProps = {
   breadcrumb: string[]
 }
 
-export const BlogContent = ({ children, breadcrumb }: BlogContentProps) => {
-  const gitHubContentUrl = location?.hash?.split("#/").join("")
+export const BlogContent = ({ children, breadcrumb }: BlogContentProps) => {  
   const [markdown, setMarkdown] = useState("")
   return (
     <Content
