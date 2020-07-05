@@ -10,18 +10,13 @@ import { BlogContent } from "./BlogContent"
 
 const { Content, Sider } = Layout
 
-// eslint-disable-next-line no-restricted-globals
-// const defaultIsMobile = screen.width <= 768
-
 export const BlogLayout = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false)
 
-  const displayMobileFunction = () => {    
-    // eslint-disable-next-line no-restricted-globals
+  const displayMobileFunction = () => {        
     if (document.documentElement.clientWidth <= 768 && !isMobile) {
       setIsMobile(true)
-    }
-    // eslint-disable-next-line no-restricted-globals
+    }    
     if (document.documentElement.clientWidth > 768 && isMobile) {
       setIsMobile(false)
     }
