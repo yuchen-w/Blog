@@ -8,16 +8,15 @@ type BlogContentProps = {
   breadcrumb: string[]
 }
 
-export const BlogContent = ({ children, breadcrumb }: BlogContentProps) => {  
+export const BlogContent = ({ children, breadcrumb }: BlogContentProps) => {
   const [markdown, setMarkdown] = useState("")
   return (
     <Content
-      className="site-layout-background"
       style={{
         padding: 24,
         margin: 0,
-        minHeight: 280,
-        overflow: "auto",
+        minHeight: 280,        
+        overflow: "hidden",
       }}
     >
       <Breadcrumb style={{ margin: "16px 0" }}>
@@ -26,7 +25,16 @@ export const BlogContent = ({ children, breadcrumb }: BlogContentProps) => {
           <Breadcrumb.Item>{bc}</Breadcrumb.Item>
         ))}
       </Breadcrumb>
-      <div style={{ background: "white", padding: "16px" }}>{children}</div>
+      <div
+        style={{
+          background: "white",
+          padding: "16px",
+          overflow: "auto",
+          maxHeight: document.documentElement.clientHeight - 256,
+        }}
+      >
+        {children}
+      </div>
     </Content>
   )
 }
