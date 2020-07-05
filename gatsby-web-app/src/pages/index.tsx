@@ -4,7 +4,6 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-import { Home } from "../generatedComponents/Home"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -40,7 +39,6 @@ const BlogIndex = ({ data, location }) => {
           </article>
         )
       })}
-      <Home/>
     </Layout>
   )
 }
