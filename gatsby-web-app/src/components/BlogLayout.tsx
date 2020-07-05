@@ -16,21 +16,23 @@ const { Content, Sider } = Layout
 export const BlogLayout = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false)
 
-  const displayMobileFunction = () => {
+  const displayMobileFunction = () => {    
     // eslint-disable-next-line no-restricted-globals
-    if (screen.width <= 768 && !isMobile) {
+    if (document.documentElement.clientWidth <= 768 && !isMobile) {
       setIsMobile(true)
     }
     // eslint-disable-next-line no-restricted-globals
-    if (screen.width > 768 && isMobile) {
+    if (document.documentElement.clientWidth > 768 && isMobile) {
       setIsMobile(false)
     }
   }
 
-  useEffect(() => {
+  useEffect(() => {    
     window.addEventListener("resize", displayMobileFunction)
     return () => window.removeEventListener("resize", displayMobileFunction)
   })
+
+  console.log(isMobile);
 
   return (
     <Layout style={{ height: "100vh" }}>
@@ -50,8 +52,7 @@ export const BlogLayout = ({ children }) => {
       <Footer0
         id="Footer0_0"
         key="Footer0_0"
-        dataSource={Footer00DataSource}
-        style={{ height: "64px" }}
+        dataSource={Footer00DataSource}        
       />
     </Layout>
   )
